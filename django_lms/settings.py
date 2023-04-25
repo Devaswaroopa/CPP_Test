@@ -84,8 +84,15 @@ WSGI_APPLICATION = 'django_lms.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'sql_mode': 'STRICT_ALL_TABLES',
+        },
+        'NAME': 'database_lms1',
+        'USER': 'admin',
+        'PASSWORD': 'admin123',
+        'HOST': 'database-lms1.cwy2ppfjmgl7.eu-west-3.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 

@@ -28,13 +28,13 @@ class Category(models.Model):
 
 
 class SubCategory(models.Model):
-    category = models.ForeignKey(Category, on_delete= models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
-    description = models.TextField(blank=True, null= True)
-    status = models.CharField(max_length=2, choices=(('1','Active'), ('2','Inactive')), default = 1)
-    delete_flag = models.IntegerField(default = 0)
-    date_added = models.DateTimeField(default = timezone.now)
-    date_created = models.DateTimeField(auto_now = True)
+    description = models.TextField(blank=True, null=True)
+    status = models.CharField(max_length=2, choices=(('1', 'Active'), ('2', 'Inactive')), default=1)
+    delete_flag = models.IntegerField(default=0)
+    date_added = models.DateTimeField(default=timezone.now)
+    date_created = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name_plural = "List of Categories"
@@ -43,17 +43,17 @@ class SubCategory(models.Model):
         return str(f"{self.category} - {self.name}")
 
 class Books(models.Model):
-    sub_category = models.ForeignKey(SubCategory, on_delete= models.CASCADE)
+    sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE, to_field='id')
     isbn = models.CharField(max_length=250)
     title = models.CharField(max_length=250)
-    description = models.TextField(blank=True, null= True)
-    author = models.TextField(blank=True, null= True)
+    description = models.TextField(blank=True, null=True)
+    author = models.TextField(blank=True, null=True)
     publisher = models.CharField(max_length=250)
     date_published = models.DateTimeField()
-    status = models.CharField(max_length=2, choices=(('1','Active'), ('2','Inactive')), default = 1)
-    delete_flag = models.IntegerField(default = 0)
-    date_added = models.DateTimeField(default = timezone.now)
-    date_created = models.DateTimeField(auto_now = True)
+    status = models.CharField(max_length=2, choices=(('1', 'Active'), ('2', 'Inactive')), default=1)
+    delete_flag = models.IntegerField(default=0)
+    date_added = models.DateTimeField(default=timezone.now)
+    date_created = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name_plural = "List of Books"
