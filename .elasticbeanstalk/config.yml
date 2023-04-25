@@ -1,6 +1,18 @@
 branch-defaults:
   main:
-    environment: Librarymanagement-env
+    environment: librarymanagement1-env
     group_suffix: null
 global:
+  application_name: librarymanagement1
+  branch: null
+  default_ec2_keyname: null
+  default_platform: Python 3.7
+  default_region: eu-west-3
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
   profile: null
+  repository: null
+  sc: git
+  workspace_type: Application
