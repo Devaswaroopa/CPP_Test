@@ -19,9 +19,8 @@ idna==3.4
 importlib-metadata==6.6.0
 jmespath==1.0.1
 jsonschema==3.2.0
-mysql==0.0.3
 mysqlclient==2.1.1
-numpy==1.22
+numpy==1.21.6
 paramiko==3.1.0
 pathspec==0.10.1
 Pillow==9.5.0
